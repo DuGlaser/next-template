@@ -41,6 +41,8 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/ban-ts-ignore': 'off',
+    'react/no-unescaped-entities': 'off',
+    'jsx-a11y/anchor-is-valid': 'off',
     'jsx-a11y/label-has-associated-control': [
       'error',
       {
