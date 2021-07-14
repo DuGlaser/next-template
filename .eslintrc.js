@@ -16,31 +16,18 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:react/recommended',
     'plugin:jsx-a11y/recommended',
-    'prettier/@typescript-eslint',
-    'plugin:prettier/recommended',
+    'prettier',
   ],
-  plugins: ['@typescript-eslint', 'import'],
+  plugins: ['@typescript-eslint', 'import', 'simple-import-sort'],
   rules: {
-    'sort-imports': 0,
-    'import/order': [
-      2,
-      {
-        alphabetize: {
-          order: 'asc',
-        },
-      },
-    ],
-    'prettier/prettier': [
-      'error',
-      {},
-      {
-        usePrettierrc: true,
-      },
-    ],
+    'simple-import-sort/imports': 'error',
+    'simple-import-sort/exports': 'error',
+    'import/first': 'error',
+    'import/newline-after-import': 'error',
+    'import/no-duplicates': 'error',
+
     'react/prop-types': 'off',
     'react/react-in-jsx-scope': 'off',
-    '@typescript-eslint/explicit-function-return-type': 'off',
-    '@typescript-eslint/ban-ts-ignore': 'off',
     'react/no-unescaped-entities': 'off',
     'jsx-a11y/anchor-is-valid': 'off',
     'jsx-a11y/label-has-associated-control': [
@@ -53,12 +40,16 @@ module.exports = {
         depth: 25,
       },
     ],
+
     '@typescript-eslint/no-explicit-any': 'off',
+    '@typescript-eslint/ban-ts-ignore': 'off',
+    '@typescript-eslint/no-empty-function': 'off',
+    '@typescript-eslint/no-unused-vars': 'error',
   },
   settings: {
     'import/resolver': {
       node: {
-        extensions: ['.ts'],
+        extensions: ['.ts', '.tsx'],
       },
     },
     react: {
